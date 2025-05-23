@@ -14,7 +14,7 @@ const int home0=650;
 const int servoChannel1 = 1;//PWM min 150 max 600 UP/home:485 lower signals move arm down
 const int home1=485;
 const int servoChannel2 = 2;//PWM min 150 max 650 UP/home:285 higher signals move arm down
-const int home2=285;
+const int home2=280;
 const int servoChannel3 = 3;//PWM min 140 615 up 378. higher moves up I think havnt checked
 const int home3=378;
 float theta0;
@@ -25,7 +25,6 @@ float cur0=90;
 float cur1=90;
 float cur2=0;
 float cur3=0;
-//float angles[4];
    void spinOnce(int channel, int directionPWM, const char* message);
 
     void setup() {
@@ -41,16 +40,15 @@ float cur3=0;
     void loop() {
 
       // send data only when you receive data:
-      if (Serial.available() > 0) {
-        // read the incoming byte:
-        
+      if (Serial.available() >= 4) {
+        // read the incoming byte: 
       readsplit();//changes theta 0 1 2 3 to be the ones in the string should be formated "float0,float1,float2,float3"
-      Serial.println(theta1);
+      //Serial.println(theta1);
         for(int i=1; i<=30; i++){
-       //SetPosch0(cur0+(theta0-cur0)*i/30);
-       SetPosch1(theta1);//(cur1+(theta1-cur1)*i/30);
-       //SetPosch2(cur2+(theta2-cur2)*i/30);
-       //SetPosch3(cur3+(theta3-cur3)*i/30);
+       SetPosch0(cur0+(theta0-cur0)*i/30);
+       SetPosch1(cur1+(theta1-cur1)*i/30);
+       SetPosch2(cur2+(theta2-cur2)*i/30);
+       SetPosch3(cur3+(theta3-cur3)*i/30);
        delay(33);
         }
         cur0=theta0;
@@ -117,13 +115,12 @@ int readsplit(){
  int comma1=fullstring.indexOf(',');
  int comma2 = fullstring.indexOf(',', comma1 + 1);
  int comma3 = fullstring.indexOf(',', comma2 + 1);
-theta0 = fullstring.substring(0,comma1).toFloat();
-theta1 = fullstring.substring(comma1+1).toFloat();
-theta2 = fullstring.substring(comma2+1).toFloat();
-theta3 = fullstring.substring(comma3+1).toFloat();
+theta0 = trim(fullstring.substring(0,comma1)).toFloat();
+theta1 = trim(fullstring.substring(comma1+1)).toFloat();
+theta2 = trim(fullstring.substring(comma2+1)).toFloat();
+theta3 = trim(fullstring.substring(comma3+1)).toFloat();
 Serial.println(theta1);
- //Serial.println(theta0);
- 
- //Serial.println(theta2);
- //Serial.println(theta3);
+ Serial.println(theta0);
+ Serial.println(theta2);
+ Serial.println(theta3);
  }
