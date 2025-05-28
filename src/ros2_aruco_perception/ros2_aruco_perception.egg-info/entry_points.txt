@@ -1,0 +1,3 @@
+[console_scripts]
+perception_node = ros2_aruco_perception.perception_node:main
+
