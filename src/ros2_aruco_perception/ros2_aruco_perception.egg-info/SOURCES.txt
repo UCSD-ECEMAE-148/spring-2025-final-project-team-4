@@ -1,0 +1,12 @@
+package.xml
+setup.py
+/home/popem/spring-2025-final-project-team-4/src/ros2_aruco_perception/../launch/perception_and_planner.launch.py
+ros2_aruco_perception/__init__.py
+ros2_aruco_perception/perception_node.py
+ros2_aruco_perception.egg-info/PKG-INFO
+ros2_aruco_perception.egg-info/SOURCES.txt
+ros2_aruco_perception.egg-info/dependency_links.txt
+ros2_aruco_perception.egg-info/entry_points.txt
+ros2_aruco_perception.egg-info/requires.txt
+ros2_aruco_perception.egg-info/top_level.txt
+ros2_aruco_perception.egg-info/zip-safe

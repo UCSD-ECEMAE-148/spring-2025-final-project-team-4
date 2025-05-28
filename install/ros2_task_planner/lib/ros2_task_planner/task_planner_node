@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+from ros2_task_planner.task_planner_node import main
+main()
