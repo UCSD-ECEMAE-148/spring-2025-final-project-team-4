@@ -1,2 +1,0 @@
-#!/usr/bin/env python3
-from ros2_aruco_perception.perception_node import main; main()

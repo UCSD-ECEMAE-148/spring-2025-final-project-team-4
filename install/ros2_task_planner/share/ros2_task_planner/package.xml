@@ -1,17 +1,1 @@
-<?xml version="1.0"?>
-<package format="3">
-  <name>ros2_task_planner</name>
-  <version>0.0.1</version>
-  <description>Python ROS 2 node for planning tasks</description>
-
-  <maintainer email="your@email.com">Your Name</maintainer>
-  <license>MIT</license>
-
-  <buildtool_depend>ament_python</buildtool_depend>
-
-  <exec_depend>rclpy</exec_depend>
-
-  <export>
-    <build_type>ament_python</build_type>
-  </export>
-</package>
+/home/popem/spring-2025-final-project-team-4/build/ros2_task_planner/package.xml

@@ -11,8 +11,8 @@ class TaskPlanner(Node):
 
         # ---- Serial -----------------------------------------------------------------
         try:
-            self.serial_port = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
-            self.get_logger().info('✔︎ Serial /dev/ttyUSB0 @ 9600 opened')
+            self.serial_port = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+            self.get_logger().info('✔︎ Serial /dev/ttyACM0 @ 9600 opened')
         except serial.SerialException as e:
             self.get_logger().error(f'‼︎ Serial open failed: {e}')
             self.serial_port = None
