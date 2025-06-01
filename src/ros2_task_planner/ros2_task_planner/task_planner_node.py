@@ -42,9 +42,10 @@ class TaskPlanner(Node):
         if self.servo_0_angle >= 180.0 or self.servo_0_angle <= 0.0:
             self.sweep_direction *= -1                     # bounce at ends
 
+        self.servo_3_angle = 90.0
         # publish for debug / visualization
         msg = Float32MultiArray()
-        msg.data = [self.servo_0_angle, 0.0, 0.0, 0.0]
+        msg.data = [self.servo_0_angle, 0.0, 0.0, self.servo_3_angle]
         self.joint_pub.publish(msg)
 
         # send to Arduino

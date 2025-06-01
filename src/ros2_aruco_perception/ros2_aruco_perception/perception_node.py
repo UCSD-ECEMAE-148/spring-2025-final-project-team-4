@@ -74,14 +74,14 @@ class ArUcoPoseEstimator(Node):
             aruco.drawDetectedMarkers(frame, marker_corners, marker_IDs)
             # Draw axes for the first detected marker (optional: loop for all)
             if avg_rVec.shape == (3, 1):
-                aruco.drawAxis(frame, self.cam_mat, self.dist_coef, avg_rVec, avg_tVec, 4)
+                cv.drawFrameAxes(frame, self.cam_mat, self.dist_coef, avg_rVec, avg_tVec, 4)
             else:
                 for i in range(len(marker_IDs)):
                     aruco.drawAxis(frame, self.cam_mat, self.dist_coef, avg_rVec[i], avg_tVec[i], 4)
 
             # Publish pose
             rot_matrix, _ = cv.Rodrigues(avg_rVec)
-            quat = R.from_matrix(rot_matrix).as_quat()  # [x, y, z, w]
+            quat = R.from_dcm(rot_matrix).as_quat()  # [x, y, z, w]
             pose_msg = Pose()
             pose_msg.position.x = float(avg_tVec[0])
             pose_msg.position.y = float(avg_tVec[1])
