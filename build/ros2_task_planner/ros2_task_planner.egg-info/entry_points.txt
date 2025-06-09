@@ -1,0 +1,3 @@
+[console_scripts]
+task_planner_node = ros2_task_planner.task_planner_node:main
+

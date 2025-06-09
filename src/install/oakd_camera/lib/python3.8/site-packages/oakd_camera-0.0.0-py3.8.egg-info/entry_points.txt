@@ -1,0 +1,4 @@
+[console_scripts]
+listen_executable = oakd_camera.OAKD_listen:main
+oakd_executable = oakd_camera.OAKD_RAW:main
+

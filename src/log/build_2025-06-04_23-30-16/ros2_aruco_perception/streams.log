@@ -1,0 +1,21 @@
+[7.348s] Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_aruco_perception': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ros2_aruco_perception build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_aruco_perception/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_aruco_perception/install.log --single-version-externally-managed
+[8.634s] running egg_info
+[8.637s] writing ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/PKG-INFO
+[8.639s] writing dependency_links to ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/dependency_links.txt
+[8.640s] writing entry points to ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/entry_points.txt
+[8.642s] writing requirements to ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/requires.txt
+[8.644s] writing top-level names to ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/top_level.txt
+[8.834s] reading manifest file '../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/SOURCES.txt'
+[8.840s] writing manifest file '../build/ros2_aruco_perception/ros2_aruco_perception.egg-info/SOURCES.txt'
+[8.841s] running build
+[8.842s] running build_py
+[8.845s] running install
+[8.850s] running install_lib
+[8.858s] running install_data
+[8.862s] running install_egg_info
+[8.875s] removing '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception/lib/python3.8/site-packages/ros2_aruco_perception-0.0.0-py3.8.egg-info' (and everything under it)
+[8.878s] Copying ../build/ros2_aruco_perception/ros2_aruco_perception.egg-info to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception/lib/python3.8/site-packages/ros2_aruco_perception-0.0.0-py3.8.egg-info
+[8.884s] running install_scripts
+[8.985s] Installing perception_node script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception/lib/ros2_aruco_perception
+[8.992s] writing list of installed files to '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_aruco_perception/install.log'
+[9.118s] Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_aruco_perception' returned '0': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ros2_aruco_perception build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_aruco_perception/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_aruco_perception --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_aruco_perception/install.log --single-version-externally-managed

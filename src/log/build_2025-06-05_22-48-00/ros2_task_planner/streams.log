@@ -1,0 +1,21 @@
+[7.146s] Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_task_planner': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ros2_task_planner build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_task_planner/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_task_planner/install.log --single-version-externally-managed
+[8.399s] running egg_info
+[8.402s] writing ../build/ros2_task_planner/ros2_task_planner.egg-info/PKG-INFO
+[8.403s] writing dependency_links to ../build/ros2_task_planner/ros2_task_planner.egg-info/dependency_links.txt
+[8.404s] writing entry points to ../build/ros2_task_planner/ros2_task_planner.egg-info/entry_points.txt
+[8.405s] writing requirements to ../build/ros2_task_planner/ros2_task_planner.egg-info/requires.txt
+[8.406s] writing top-level names to ../build/ros2_task_planner/ros2_task_planner.egg-info/top_level.txt
+[8.602s] reading manifest file '../build/ros2_task_planner/ros2_task_planner.egg-info/SOURCES.txt'
+[8.608s] writing manifest file '../build/ros2_task_planner/ros2_task_planner.egg-info/SOURCES.txt'
+[8.610s] running build
+[8.611s] running build_py
+[8.612s] running install
+[8.617s] running install_lib
+[8.626s] running install_data
+[8.630s] running install_egg_info
+[8.640s] removing '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner/lib/python3.8/site-packages/ros2_task_planner-0.0.0-py3.8.egg-info' (and everything under it)
+[8.643s] Copying ../build/ros2_task_planner/ros2_task_planner.egg-info to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner/lib/python3.8/site-packages/ros2_task_planner-0.0.0-py3.8.egg-info
+[8.649s] running install_scripts
+[8.747s] Installing task_planner_node script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner/lib/ros2_task_planner
+[8.750s] writing list of installed files to '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_task_planner/install.log'
+[8.895s] Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_task_planner' returned '0': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ros2_task_planner build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_task_planner/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/ros2_task_planner --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/ros2_task_planner/install.log --single-version-externally-managed

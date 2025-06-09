@@ -1,0 +1,7 @@
+[0.000000] (-) TimerEvent: {}
+[0.000608] (-) JobUnselected: {'identifier': 'armangles1'}
+[0.001236] (-) JobUnselected: {'identifier': 'oakd_camera'}
+[0.001516] (-) JobUnselected: {'identifier': 'ros2_aruco_perception'}
+[0.001871] (-) JobUnselected: {'identifier': 'ros2_task_planner'}
+[0.002054] (-) JobUnselected: {'identifier': 'usb_cam_driver'}
+[0.002729] (-) EventReactorShutdown: {}

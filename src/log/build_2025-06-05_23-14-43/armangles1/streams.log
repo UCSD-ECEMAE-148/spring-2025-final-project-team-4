@@ -1,0 +1,21 @@
+[7.647s] Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles1': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/armangles1 build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/armangles1/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1 --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/armangles1/install.log --single-version-externally-managed
+[8.915s] running egg_info
+[8.918s] writing ../build/armangles1/armangles1.egg-info/PKG-INFO
+[8.922s] writing dependency_links to ../build/armangles1/armangles1.egg-info/dependency_links.txt
+[8.923s] writing entry points to ../build/armangles1/armangles1.egg-info/entry_points.txt
+[8.925s] writing requirements to ../build/armangles1/armangles1.egg-info/requires.txt
+[8.926s] writing top-level names to ../build/armangles1/armangles1.egg-info/top_level.txt
+[9.111s] reading manifest file '../build/armangles1/armangles1.egg-info/SOURCES.txt'
+[9.117s] writing manifest file '../build/armangles1/armangles1.egg-info/SOURCES.txt'
+[9.118s] running build
+[9.119s] running build_py
+[9.125s] running install
+[9.131s] running install_lib
+[9.140s] running install_data
+[9.146s] running install_egg_info
+[9.158s] removing '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1/lib/python3.8/site-packages/armangles1-0.0.0-py3.8.egg-info' (and everything under it)
+[9.161s] Copying ../build/armangles1/armangles1.egg-info to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1/lib/python3.8/site-packages/armangles1-0.0.0-py3.8.egg-info
+[9.171s] running install_scripts
+[9.276s] Installing sendangles_executable script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1/lib/armangles1
+[9.278s] writing list of installed files to '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/armangles1/install.log'
+[9.414s] Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles1' returned '0': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/armangles1 build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/armangles1/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/armangles1 --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/armangles1/install.log --single-version-externally-managed

@@ -1,0 +1,58 @@
+[0.000000] (-) TimerEvent: {}
+[0.000982] (armangles1) JobQueued: {'identifier': 'armangles1', 'dependencies': OrderedDict()}
+[0.001331] (oakd_camera) JobQueued: {'identifier': 'oakd_camera', 'dependencies': OrderedDict()}
+[0.002246] (ros2_aruco_perception) JobQueued: {'identifier': 'ros2_aruco_perception', 'dependencies': OrderedDict()}
+[0.002843] (ros2_task_planner) JobQueued: {'identifier': 'ros2_task_planner', 'dependencies': OrderedDict()}
+[0.004369] (usb_cam_driver) JobQueued: {'identifier': 'usb_cam_driver', 'dependencies': OrderedDict()}
+[0.004568] (armangles1) JobStarted: {'identifier': 'armangles1'}
+[0.074275] (oakd_camera) JobStarted: {'identifier': 'oakd_camera'}
+[0.099736] (-) TimerEvent: {}
+[0.129866] (ros2_aruco_perception) JobStarted: {'identifier': 'ros2_aruco_perception'}
+[0.184811] (ros2_task_planner) JobStarted: {'identifier': 'ros2_task_planner'}
+[0.199893] (-) TimerEvent: {}
+[0.300842] (-) TimerEvent: {}
+[0.401742] (-) TimerEvent: {}
+[0.502398] (-) TimerEvent: {}
+[0.603063] (-) TimerEvent: {}
+[0.703737] (-) TimerEvent: {}
+[0.804424] (-) TimerEvent: {}
+[0.905081] (-) TimerEvent: {}
+[1.005734] (-) TimerEvent: {}
+[1.106351] (-) TimerEvent: {}
+[1.206992] (-) TimerEvent: {}
+[1.307641] (-) TimerEvent: {}
+[1.408360] (-) TimerEvent: {}
+[1.509166] (-) TimerEvent: {}
+[1.610064] (-) TimerEvent: {}
+[1.710735] (-) TimerEvent: {}
+[1.811413] (-) TimerEvent: {}
+[1.912161] (-) TimerEvent: {}
+[2.012801] (-) TimerEvent: {}
+[2.113440] (-) TimerEvent: {}
+[2.214075] (-) TimerEvent: {}
+[2.314709] (-) TimerEvent: {}
+[2.415381] (-) TimerEvent: {}
+[2.516077] (-) TimerEvent: {}
+[2.616743] (-) TimerEvent: {}
+[2.717397] (-) TimerEvent: {}
+[2.818104] (-) TimerEvent: {}
+[2.907665] (oakd_camera) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 51, in build\n    setup_py_data = get_setup_data(self.context.pkg, env)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/__init__.py", line 20, in get_setup_data\n    return dict(pkg.metadata[key](env))\n  File "/usr/lib/python3/dist-packages/colcon_ros/package_augmentation/ros_ament_python.py", line 57, in getter\n    return get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 241, in get_setup_information\n    _setup_information_cache[hashable_env] = _get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 281, in _get_setup_information\n    result = subprocess.run(\n  File "/usr/lib/python3.8/subprocess.py", line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command \'[\'/usr/bin/python3\', \'-c\', "import sys;from setuptools.extern.packaging.specifiers import SpecifierSet;from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))"]\' returned non-zero exit status 1.\n'}
+[2.913875] (oakd_camera) JobEnded: {'identifier': 'oakd_camera', 'rc': 1}
+[2.918280] (-) TimerEvent: {}
+[3.018967] (-) TimerEvent: {}
+[3.119613] (-) TimerEvent: {}
+[3.220319] (-) TimerEvent: {}
+[3.321007] (-) TimerEvent: {}
+[3.421663] (-) TimerEvent: {}
+[3.522359] (-) TimerEvent: {}
+[3.623003] (-) TimerEvent: {}
+[3.723649] (-) TimerEvent: {}
+[3.824561] (-) TimerEvent: {}
+[3.925213] (-) TimerEvent: {}
+[4.025870] (-) TimerEvent: {}
+[4.121120] (armangles1) JobEnded: {'identifier': 'armangles1', 'rc': 'SIGINT'}
+[4.124243] (ros2_task_planner) JobEnded: {'identifier': 'ros2_task_planner', 'rc': 'SIGINT'}
+[4.126016] (-) TimerEvent: {}
+[4.126394] (ros2_aruco_perception) JobEnded: {'identifier': 'ros2_aruco_perception', 'rc': 'SIGINT'}
+[4.137042] (usb_cam_driver) JobSkipped: {'identifier': 'usb_cam_driver'}
+[4.137229] (-) EventReactorShutdown: {}

@@ -1,0 +1,25 @@
+[3.277s] Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/oakd_camera': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/oakd_camera build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/install.log --single-version-externally-managed
+[4.399s] running egg_info
+[4.401s] writing ../build/oakd_camera/oakd_camera.egg-info/PKG-INFO
+[4.403s] writing dependency_links to ../build/oakd_camera/oakd_camera.egg-info/dependency_links.txt
+[4.404s] writing entry points to ../build/oakd_camera/oakd_camera.egg-info/entry_points.txt
+[4.404s] writing requirements to ../build/oakd_camera/oakd_camera.egg-info/requires.txt
+[4.405s] writing top-level names to ../build/oakd_camera/oakd_camera.egg-info/top_level.txt
+[4.564s] reading manifest file '../build/oakd_camera/oakd_camera.egg-info/SOURCES.txt'
+[4.568s] writing manifest file '../build/oakd_camera/oakd_camera.egg-info/SOURCES.txt'
+[4.569s] running build
+[4.570s] running build_py
+[4.570s] copying oakd_camera/OAKD_listen.py -> /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/build/lib/oakd_camera
+[4.571s] running install
+[4.575s] running install_lib
+[4.579s] copying /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/build/lib/oakd_camera/OAKD_listen.py -> /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages/oakd_camera
+[4.583s] byte-compiling /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages/oakd_camera/OAKD_listen.py to OAKD_listen.cpython-38.pyc
+[4.590s] running install_data
+[4.592s] running install_egg_info
+[4.601s] removing '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages/oakd_camera-0.0.0-py3.8.egg-info' (and everything under it)
+[4.602s] Copying ../build/oakd_camera/oakd_camera.egg-info to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages/oakd_camera-0.0.0-py3.8.egg-info
+[4.606s] running install_scripts
+[4.676s] Installing listen_executable script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/oakd_camera
+[4.678s] Installing oakd_executable script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/oakd_camera
+[4.679s] writing list of installed files to '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/install.log'
+[4.786s] Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/oakd_camera' returned '0': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/oakd_camera build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/oakd_camera/install.log --single-version-externally-managed

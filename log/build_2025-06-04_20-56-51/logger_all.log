@@ -1,0 +1,313 @@
+[0.749s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.749s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f95eba040>>, merge_install=False, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('build',), packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=4, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f95eba040>, verb_name='build', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f95eba640>)
+[0.770s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.773s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.776s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.777s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.777s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/projects/ros2_ws/spring-2025-final-project-team-4'
+[0.777s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.777s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.827s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.827s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.828s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.828s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.828s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.828s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.829s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.829s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.829s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.830s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.830s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.830s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.831s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.831s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.831s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'ignore'
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'ignore_ament_install'
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['colcon_pkg']
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'colcon_pkg'
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['colcon_meta']
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'colcon_meta'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['ros']
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'ros'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['cmake', 'python']
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'cmake'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'python'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extensions ['python_setup_py']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver) by extension 'python_setup_py'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['ignore', 'ignore_ament_install']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'ignore'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'ignore_ament_install'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['colcon_pkg']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'colcon_pkg'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['colcon_meta']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'colcon_meta'
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['ros']
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'ros'
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['cmake', 'python']
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'cmake'
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'python'
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extensions ['python_setup_py']
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/include) by extension 'python_setup_py'
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['ignore', 'ignore_ament_install']
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'ignore'
+[0.838s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'ignore_ament_install'
+[0.838s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['colcon_pkg']
+[0.838s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'colcon_pkg'
+[0.838s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['colcon_meta']
+[0.838s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'colcon_meta'
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['ros']
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'ros'
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['cmake', 'python']
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'cmake'
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'python'
+[0.839s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extensions ['python_setup_py']
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/lib) by extension 'python_setup_py'
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['ignore', 'ignore_ament_install']
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'ignore'
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'ignore_ament_install'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['colcon_pkg']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'colcon_pkg'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['colcon_meta']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'colcon_meta'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['ros']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'ros'
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['cmake', 'python']
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'cmake'
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'python'
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extensions ['python_setup_py']
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/src) by extension 'python_setup_py'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['ignore', 'ignore_ament_install']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'ignore'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'ignore_ament_install'
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['colcon_pkg']
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'colcon_pkg'
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['colcon_meta']
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'colcon_meta'
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['ros']
+[0.844s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'ros'
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['cmake', 'python']
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'cmake'
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'python'
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extensions ['python_setup_py']
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(robotic_arm_arduino_driver/test) by extension 'python_setup_py'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extensions ['ignore', 'ignore_ament_install']
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extension 'ignore'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extension 'ignore_ament_install'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extensions ['colcon_pkg']
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extension 'colcon_pkg'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extensions ['colcon_meta']
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extension 'colcon_meta'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extensions ['ros']
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(src/armangles) by extension 'ros'
+[0.859s] DEBUG:colcon.colcon_core.package_identification:Package 'src/armangles' with type 'ros.ament_python' and name 'armangles'
+[0.859s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ignore', 'ignore_ament_install']
+[0.860s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore'
+[0.860s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore_ament_install'
+[0.860s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_pkg']
+[0.861s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_pkg'
+[0.861s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_meta']
+[0.861s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_meta'
+[0.861s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ros']
+[0.861s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ros'
+[0.862s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['cmake', 'python']
+[0.862s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'cmake'
+[0.862s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python'
+[0.862s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['python_setup_py']
+[0.862s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python_setup_py'
+[0.863s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.863s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'ignore'
+[0.863s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'ignore_ament_install'
+[0.863s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['colcon_pkg']
+[0.864s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'colcon_pkg'
+[0.864s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['colcon_meta']
+[0.864s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'colcon_meta'
+[0.864s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['ros']
+[0.864s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'ros'
+[0.865s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['cmake', 'python']
+[0.865s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'cmake'
+[0.865s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'python'
+[0.865s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extensions ['python_setup_py']
+[0.865s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch/__pycache__) by extension 'python_setup_py'
+[0.866s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.866s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extension 'ignore'
+[0.866s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extension 'ignore_ament_install'
+[0.866s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extensions ['colcon_pkg']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extension 'colcon_pkg'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extensions ['colcon_meta']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extension 'colcon_meta'
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extensions ['ros']
+[0.867s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_aruco_perception) by extension 'ros'
+[0.869s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_aruco_perception' with type 'ros.ament_python' and name 'ros2_aruco_perception'
+[0.869s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extensions ['ignore', 'ignore_ament_install']
+[0.870s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extension 'ignore'
+[0.870s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extension 'ignore_ament_install'
+[0.870s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extensions ['colcon_pkg']
+[0.870s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extension 'colcon_pkg'
+[0.871s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extensions ['colcon_meta']
+[0.871s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extension 'colcon_meta'
+[0.871s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extensions ['ros']
+[0.871s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_task_planner) by extension 'ros'
+[0.873s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_task_planner' with type 'ros.ament_python' and name 'ros2_task_planner'
+[0.873s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.873s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extension 'ignore'
+[0.874s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extension 'ignore_ament_install'
+[0.874s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extensions ['colcon_pkg']
+[0.874s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extension 'colcon_pkg'
+[0.874s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extensions ['colcon_meta']
+[0.874s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extension 'colcon_meta'
+[0.875s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extensions ['ros']
+[0.875s] Level 1:colcon.colcon_core.package_identification:_identify(src/usb_cam_driver) by extension 'ros'
+[0.876s] DEBUG:colcon.colcon_core.package_identification:Package 'src/usb_cam_driver' with type 'ros.ament_python' and name 'usb_cam_driver'
+[0.877s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['ignore', 'ignore_ament_install']
+[0.877s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'ignore'
+[0.877s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'ignore_ament_install'
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['colcon_pkg']
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'colcon_pkg'
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['colcon_meta']
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'colcon_meta'
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['ros']
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'ros'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['cmake', 'python']
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'cmake'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'python'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extensions ['python_setup_py']
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(turn_servo2) by extension 'python_setup_py'
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.959s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_args' from command line to 'None'
+[0.959s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_target' from command line to 'None'
+[0.959s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.959s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_clean_cache' from command line to 'False'
+[0.959s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_clean_first' from command line to 'False'
+[0.960s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'cmake_force_configure' from command line to 'False'
+[0.960s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'ament_cmake_args' from command line to 'None'
+[0.960s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'catkin_cmake_args' from command line to 'None'
+[0.960s] Level 5:colcon.colcon_core.verb:set package 'armangles' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.960s] DEBUG:colcon.colcon_core.verb:Building package 'armangles' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/armangles', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles', 'merge_install': False, 'path': '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles', 'symlink_install': False, 'test_result_base': None}
+[0.963s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_args' from command line to 'None'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_target' from command line to 'None'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.964s] Level 5:colcon.colcon_core.verb:set package 'ros2_aruco_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.965s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_aruco_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_aruco_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception', 'merge_install': False, 'path': '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_aruco_perception', 'symlink_install': False, 'test_result_base': None}
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_args' from command line to 'None'
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_target' from command line to 'None'
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_clean_first' from command line to 'False'
+[0.968s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'cmake_force_configure' from command line to 'False'
+[0.969s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'ament_cmake_args' from command line to 'None'
+[0.969s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[0.969s] Level 5:colcon.colcon_core.verb:set package 'ros2_task_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.969s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_task_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_task_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner', 'merge_install': False, 'path': '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_task_planner', 'symlink_install': False, 'test_result_base': None}
+[0.972s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_args' from command line to 'None'
+[0.972s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_target' from command line to 'None'
+[0.972s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.973s] Level 5:colcon.colcon_core.verb:set package 'usb_cam_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.973s] DEBUG:colcon.colcon_core.verb:Building package 'usb_cam_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/usb_cam_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver', 'merge_install': False, 'path': '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/usb_cam_driver', 'symlink_install': False, 'test_result_base': None}
+[1.009s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.018s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.019s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles' with build type 'ament_python'
+[1.020s] Level 1:colcon.colcon_core.shell:create_environment_hook('armangles', 'ament_prefix_path')
+[1.035s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles/share/armangles/hook/ament_prefix_path.ps1'
+[1.039s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles/share/armangles/hook/ament_prefix_path.dsv'
+[1.041s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles/share/armangles/hook/ament_prefix_path.sh'
+[1.046s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.046s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.084s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_aruco_perception' with build type 'ament_python'
+[1.085s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_aruco_perception', 'ament_prefix_path')
+[1.088s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/hook/ament_prefix_path.ps1'
+[1.091s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/hook/ament_prefix_path.dsv'
+[1.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/hook/ament_prefix_path.sh'
+[1.095s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.096s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.135s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_task_planner' with build type 'ament_python'
+[1.136s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_task_planner', 'ament_prefix_path')
+[1.140s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner/share/ros2_task_planner/hook/ament_prefix_path.ps1'
+[1.142s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner/share/ros2_task_planner/hook/ament_prefix_path.dsv'
+[1.144s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner/share/ros2_task_planner/hook/ament_prefix_path.sh'
+[1.147s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.148s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.185s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/usb_cam_driver' with build type 'ament_python'
+[1.186s] Level 1:colcon.colcon_core.shell:create_environment_hook('usb_cam_driver', 'ament_prefix_path')
+[1.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver/share/usb_cam_driver/hook/ament_prefix_path.ps1'
+[1.192s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver/share/usb_cam_driver/hook/ament_prefix_path.dsv'
+[1.193s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver/share/usb_cam_driver/hook/ament_prefix_path.sh'
+[1.197s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.197s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.368s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles'
+[2.372s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.372s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.569s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_aruco_perception'
+[3.572s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.572s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.724s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/ros2_task_planner'
+[4.727s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.727s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.880s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/usb_cam_driver'
+[5.884s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.884s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.201s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/armangles': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/armangles build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/build/armangles/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/install/armangles --record /home/projects/ros2_ws/spring-2025-final-project-team-4/build/armangles/install.log --single-version-externally-managed
+[8.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_task_planner': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner --uninstall --editable --build-directory /home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_task_planner/build
+[8.295s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/usb_cam_driver': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/install/usb_cam_driver --uninstall --editable --build-directory /home/projects/ros2_ws/spring-2025-final-project-team-4/build/usb_cam_driver/build
+[8.316s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_aruco_perception': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_aruco_perception --uninstall --editable --build-directory /home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_aruco_perception/build
+[8.414s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_task_planner' returned '2': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/install/ros2_task_planner --uninstall --editable --build-directory /home/projects/ros2_ws/spring-2025-final-project-team-4/build/ros2_task_planner/build
+[9.706s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.707s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.707s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[9.707s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.731s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[9.731s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.731s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.732s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[9.732s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[9.732s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[9.735s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/local_setup.ps1'
+[9.738s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/_local_setup_util_ps1.py'
+[9.744s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/setup.ps1'
+[9.754s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/local_setup.sh'
+[9.756s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/_local_setup_util_sh.py'
+[9.757s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/setup.sh'
+[9.767s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/local_setup.bash'
+[9.769s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/setup.bash'
+[9.778s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/local_setup.zsh'
+[9.780s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/projects/ros2_ws/spring-2025-final-project-team-4/install/setup.zsh'

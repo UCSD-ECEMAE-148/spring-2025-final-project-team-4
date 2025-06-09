@@ -1,0 +1,21 @@
+[7.293s] Invoking command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/usb_cam_driver': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/usb_cam_driver build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/usb_cam_driver/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/usb_cam_driver/install.log --single-version-externally-managed
+[8.572s] running egg_info
+[8.576s] writing ../build/usb_cam_driver/usb_cam_driver.egg-info/PKG-INFO
+[8.576s] writing dependency_links to ../build/usb_cam_driver/usb_cam_driver.egg-info/dependency_links.txt
+[8.577s] writing entry points to ../build/usb_cam_driver/usb_cam_driver.egg-info/entry_points.txt
+[8.578s] writing requirements to ../build/usb_cam_driver/usb_cam_driver.egg-info/requires.txt
+[8.578s] writing top-level names to ../build/usb_cam_driver/usb_cam_driver.egg-info/top_level.txt
+[8.761s] reading manifest file '../build/usb_cam_driver/usb_cam_driver.egg-info/SOURCES.txt'
+[8.768s] writing manifest file '../build/usb_cam_driver/usb_cam_driver.egg-info/SOURCES.txt'
+[8.769s] running build
+[8.769s] running build_py
+[8.770s] running install
+[8.776s] running install_lib
+[8.785s] running install_data
+[8.787s] running install_egg_info
+[8.798s] removing '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver/lib/python3.8/site-packages/usb_cam_driver-0.0.0-py3.8.egg-info' (and everything under it)
+[8.799s] Copying ../build/usb_cam_driver/usb_cam_driver.egg-info to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver/lib/python3.8/site-packages/usb_cam_driver-0.0.0-py3.8.egg-info
+[8.806s] running install_scripts
+[8.899s] Installing usb_cam_node script to /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver/lib/usb_cam_driver
+[8.901s] writing list of installed files to '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/usb_cam_driver/install.log'
+[9.044s] Invoked command in '/home/projects/ros2_ws/spring-2025-final-project-team-4/src/usb_cam_driver' returned '0': PYTHONPATH=/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/usb_cam_driver build --build-base /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/usb_cam_driver/build install --prefix /home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/usb_cam_driver --record /home/projects/ros2_ws/spring-2025-final-project-team-4/src/build/usb_cam_driver/install.log --single-version-externally-managed

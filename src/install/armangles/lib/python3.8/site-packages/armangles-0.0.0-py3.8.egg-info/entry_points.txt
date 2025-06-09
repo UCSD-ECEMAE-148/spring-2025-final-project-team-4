@@ -1,0 +1,4 @@
+[console_scripts]
+PUB_executable = armangles.PUB_POS:main
+sendangles_executable = armangles.sendangles:main
+

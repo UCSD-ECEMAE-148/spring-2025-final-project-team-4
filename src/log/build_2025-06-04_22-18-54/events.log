@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.001062] (armangles1) JobQueued: {'identifier': 'armangles1', 'dependencies': OrderedDict()}
+[0.001412] (ros2_aruco_perception) JobQueued: {'identifier': 'ros2_aruco_perception', 'dependencies': OrderedDict()}
+[0.002320] (ros2_task_planner) JobQueued: {'identifier': 'ros2_task_planner', 'dependencies': OrderedDict()}
+[0.002938] (usb_cam_driver) JobQueued: {'identifier': 'usb_cam_driver', 'dependencies': OrderedDict()}
+[0.004370] (armangles1) JobStarted: {'identifier': 'armangles1'}
+[0.084470] (ros2_aruco_perception) JobStarted: {'identifier': 'ros2_aruco_perception'}
+[0.099135] (-) TimerEvent: {}
+[0.136602] (ros2_task_planner) JobStarted: {'identifier': 'ros2_task_planner'}
+[0.186158] (usb_cam_driver) JobStarted: {'identifier': 'usb_cam_driver'}
+[0.199364] (-) TimerEvent: {}
+[0.300162] (-) TimerEvent: {}
+[0.401028] (-) TimerEvent: {}
+[0.501722] (-) TimerEvent: {}
+[0.602372] (-) TimerEvent: {}
+[0.703033] (-) TimerEvent: {}
+[0.803692] (-) TimerEvent: {}
+[0.904337] (-) TimerEvent: {}
+[1.004949] (-) TimerEvent: {}
+[1.105612] (-) TimerEvent: {}
+[1.206312] (-) TimerEvent: {}
+[1.306969] (-) TimerEvent: {}
+[1.407615] (-) TimerEvent: {}
+[1.508277] (-) TimerEvent: {}
+[1.608947] (-) TimerEvent: {}
+[1.709642] (-) TimerEvent: {}
+[1.810390] (-) TimerEvent: {}
+[1.902312] (armangles1) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 51, in build\n    setup_py_data = get_setup_data(self.context.pkg, env)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/__init__.py", line 20, in get_setup_data\n    return dict(pkg.metadata[key](env))\n  File "/usr/lib/python3/dist-packages/colcon_ros/package_augmentation/ros_ament_python.py", line 57, in getter\n    return get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 241, in get_setup_information\n    _setup_information_cache[hashable_env] = _get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 281, in _get_setup_information\n    result = subprocess.run(\n  File "/usr/lib/python3.8/subprocess.py", line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command \'[\'/usr/bin/python3\', \'-c\', "import sys;from setuptools.extern.packaging.specifiers import SpecifierSet;from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))"]\' returned non-zero exit status 1.\n'}
+[1.910060] (armangles1) JobEnded: {'identifier': 'armangles1', 'rc': 1}
+[1.912042] (-) TimerEvent: {}
+[2.012690] (-) TimerEvent: {}
+[2.113347] (-) TimerEvent: {}
+[2.213998] (-) TimerEvent: {}
+[2.314699] (-) TimerEvent: {}
+[2.415333] (-) TimerEvent: {}
+[2.515949] (-) TimerEvent: {}
+[2.616567] (-) TimerEvent: {}
+[2.717164] (-) TimerEvent: {}
+[2.817770] (-) TimerEvent: {}
+[2.918505] (-) TimerEvent: {}
+[3.019169] (-) TimerEvent: {}
+[3.119980] (-) TimerEvent: {}
+[3.220822] (-) TimerEvent: {}
+[3.321474] (-) TimerEvent: {}
+[3.422117] (-) TimerEvent: {}
+[3.522803] (-) TimerEvent: {}
+[3.623434] (-) TimerEvent: {}
+[3.724074] (-) TimerEvent: {}
+[3.824679] (-) TimerEvent: {}
+[3.925290] (-) TimerEvent: {}
+[4.025953] (-) TimerEvent: {}
+[4.126629] (-) TimerEvent: {}
+[4.227283] (-) TimerEvent: {}
+[4.275620] (ros2_aruco_perception) JobEnded: {'identifier': 'ros2_aruco_perception', 'rc': 'SIGINT'}
+[4.279273] (usb_cam_driver) JobEnded: {'identifier': 'usb_cam_driver', 'rc': 'SIGINT'}
+[4.280705] (ros2_task_planner) JobEnded: {'identifier': 'ros2_task_planner', 'rc': 'SIGINT'}
+[4.290997] (-) EventReactorShutdown: {}
