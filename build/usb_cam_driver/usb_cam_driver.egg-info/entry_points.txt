@@ -1,0 +1,3 @@
+[console_scripts]
+usb_cam_node = usb_cam_driver.usb_cam_node:main
+

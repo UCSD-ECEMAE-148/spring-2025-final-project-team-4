@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating usb_cam_driver.egg-info
+writing usb_cam_driver.egg-info/PKG-INFO
+writing dependency_links to usb_cam_driver.egg-info/dependency_links.txt
+writing entry points to usb_cam_driver.egg-info/entry_points.txt
+writing requirements to usb_cam_driver.egg-info/requires.txt
+writing top-level names to usb_cam_driver.egg-info/top_level.txt
+writing manifest file 'usb_cam_driver.egg-info/SOURCES.txt'
+reading manifest file 'usb_cam_driver.egg-info/SOURCES.txt'
+writing manifest file 'usb_cam_driver.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/lib/python3.8/site-packages/site.py
+Creating /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/lib/python3.8/site-packages/usb-cam-driver.egg-link (link to .)
+Installing usb_cam_node script to /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/lib/usb_cam_driver
+
+Installed /home/popem/spring-2025-final-project-team-4/build/usb_cam_driver
+running symlink_data
+creating /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/share/ament_index
+creating /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/share/ament_index/resource_index
+creating /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/share/ament_index/resource_index/packages
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/usb_cam_driver/resource/usb_cam_driver -> /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/share/ament_index/resource_index/packages
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/usb_cam_driver/package.xml -> /home/popem/spring-2025-final-project-team-4/install/usb_cam_driver/share/usb_cam_driver

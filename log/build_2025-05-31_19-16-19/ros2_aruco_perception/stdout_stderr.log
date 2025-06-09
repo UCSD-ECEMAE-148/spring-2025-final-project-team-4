@@ -1,0 +1,27 @@
+running develop
+running egg_info
+creating ros2_aruco_perception.egg-info
+writing ros2_aruco_perception.egg-info/PKG-INFO
+writing dependency_links to ros2_aruco_perception.egg-info/dependency_links.txt
+writing entry points to ros2_aruco_perception.egg-info/entry_points.txt
+writing requirements to ros2_aruco_perception.egg-info/requires.txt
+writing top-level names to ros2_aruco_perception.egg-info/top_level.txt
+writing manifest file 'ros2_aruco_perception.egg-info/SOURCES.txt'
+reading manifest file 'ros2_aruco_perception.egg-info/SOURCES.txt'
+writing manifest file 'ros2_aruco_perception.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/lib/python3.8/site-packages/site.py
+Creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/lib/python3.8/site-packages/ros2-aruco-perception.egg-link (link to .)
+Installing perception_node script to /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/lib/ros2_aruco_perception
+
+Installed /home/popem/spring-2025-final-project-team-4/build/ros2_aruco_perception
+running symlink_data
+creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ament_index
+creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ament_index/resource_index
+creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ament_index/resource_index/packages
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/ros2_aruco_perception/resource/ros2_aruco_perception -> /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ament_index/resource_index/packages
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/ros2_aruco_perception/package.xml -> /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception
+creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/launch
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/launch/perception_and_planner.launch.py -> /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/launch
+creating /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/calib_data
+symbolically linking /home/popem/spring-2025-final-project-team-4/build/ros2_aruco_perception/ros2_aruco_perception/calib_data/MultiMatrix.npz -> /home/popem/spring-2025-final-project-team-4/install/ros2_aruco_perception/share/ros2_aruco_perception/calib_data

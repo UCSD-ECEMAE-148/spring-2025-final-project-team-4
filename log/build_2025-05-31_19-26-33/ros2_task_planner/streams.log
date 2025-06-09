@@ -1,0 +1,17 @@
+[2.592s] Invoking command in '/home/popem/spring-2025-final-project-team-4/build/ros2_task_planner': PYTHONPATH=/home/popem/spring-2025-final-project-team-4/build/ros2_task_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/popem/spring-2025-final-project-team-4/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/popem/spring-2025-final-project-team-4/build/ros2_task_planner/build --no-deps symlink_data
+[3.134s] running develop
+[3.451s] running egg_info
+[3.452s] writing ros2_task_planner.egg-info/PKG-INFO
+[3.452s] writing dependency_links to ros2_task_planner.egg-info/dependency_links.txt
+[3.454s] writing entry points to ros2_task_planner.egg-info/entry_points.txt
+[3.454s] writing requirements to ros2_task_planner.egg-info/requires.txt
+[3.455s] writing top-level names to ros2_task_planner.egg-info/top_level.txt
+[3.516s] reading manifest file 'ros2_task_planner.egg-info/SOURCES.txt'
+[3.518s] writing manifest file 'ros2_task_planner.egg-info/SOURCES.txt'
+[3.607s] running build_ext
+[3.608s] Creating /home/popem/spring-2025-final-project-team-4/install/ros2_task_planner/lib/python3.8/site-packages/ros2-task-planner.egg-link (link to .)
+[3.609s] Installing task_planner_node script to /home/popem/spring-2025-final-project-team-4/install/ros2_task_planner/lib/ros2_task_planner
+[3.610s] 
+[3.610s] Installed /home/popem/spring-2025-final-project-team-4/build/ros2_task_planner
+[3.610s] running symlink_data
+[3.690s] Invoked command in '/home/popem/spring-2025-final-project-team-4/build/ros2_task_planner' returned '0': PYTHONPATH=/home/popem/spring-2025-final-project-team-4/build/ros2_task_planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/popem/spring-2025-final-project-team-4/install/ros2_task_planner/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/popem/spring-2025-final-project-team-4/build/ros2_task_planner/build --no-deps symlink_data
