@@ -1,1 +1,0 @@
-/home/popem/spring-2025-final-project-team-4/src/ros2_aruco_perception/../launch/perception_and_planner.launch.py
