@@ -9,7 +9,7 @@ class USBCameraNode(Node):
         super().__init__('usb_cam_node')
         self.publisher = self.create_publisher(Image, 'camera/image_raw', 10)
         self.bridge = CvBridge()
-        self.cap = cv2.VideoCapture(1)
+        self.cap = cv2.VideoCapture(0)
 
         # Try to set a supported resolution and MJPG format
         self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))

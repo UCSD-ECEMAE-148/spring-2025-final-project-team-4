@@ -81,7 +81,7 @@ class ArUcoPoseEstimator(Node):
 
             # Publish pose
             rot_matrix, _ = cv.Rodrigues(avg_rVec)
-            quat = R.from_matrix(rot_matrix).as_quat() #quat = R.from_dcm(rot_matrix).as_quat()  # [x, y, z, w]
+            quat = R.from_dcm(rot_matrix).as_quat()  # [x, y, z, w]
             pose_msg = Pose()
             pose_msg.position.x = float(avg_tVec[0])
             pose_msg.position.y = float(avg_tVec[1])
@@ -91,9 +91,9 @@ class ArUcoPoseEstimator(Node):
             pose_msg.orientation.z = quat[2]
             pose_msg.orientation.w = quat[3]
             self.pose_publisher.publish(pose_msg)
-            self.get_logger().info(f"the value of z is:{pose_msg.position.z}")
-       # cv.imshow("frame", frame)
-       # cv.waitKey(1)
+
+        cv.imshow("frame", frame)
+        cv.waitKey(1)
 
 def main(args=None):
     rclpy.init(args=args)

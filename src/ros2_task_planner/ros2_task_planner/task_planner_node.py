@@ -10,119 +10,123 @@ class TaskPlanner(Node):
     def __init__(self):
         super().__init__('task_planner_node')
 
-        # ---- Serial -----------------------------------------------------------------
+        # ---- Serial ---------------------------------------------------------
         try:
-            self.serial_port = serial.Serial('/dev/ttyACM1', 9600, timeout=1)
-            self.get_logger().info('✔︎ Serial /dev/ttyACM1 @ 9600 opened')
+            self.serial_port = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+            self.get_logger().info("✔︎ Serial /dev/ttyACM0 opened")
         except serial.SerialException as e:
-            self.get_logger().error(f'‼︎ Serial open failed: {e}')
+            self.get_logger().error(f"‼︎ Serial open failed: {e}")
             self.serial_port = None
 
-        # ---- ROS I/O ----------------------------------------------------------------
-        self.joint_pub = self.create_publisher(
-            Float32MultiArray, '/arm/joint_commands', 10)
+        # ---- ROS I/O --------------------------------------------------------
+        self.joint_pub = self.create_publisher(Float32MultiArray,
+                                               '/arm/joint_commands', 10)
+        self.create_subscription(Pose, 'aruco_marker/pose',
+                                 self.pose_callback, 10)
 
-        self.subscription = self.create_subscription(
-            Pose, 'aruco_marker/pose', self.pose_callback, 10)
+        # ---- Sweep parameters ----------------------------------------------
+        self.sweeping      = True      # start in sweep mode
+        self.base_angle    =   0.0     # start at one end
+        self.step_deg      =  10.0     # 10° per sweep tick
+        self.timer_period  =  1.15      # seconds between targets
+        self.create_timer(self.timer_period, self.sweep_tick)
 
-        # ---- Sweep state -------------------------------------------------------------
-        self.sweeping        = True
-        self.servo_angles    = [180.0, 70.0, 135.0, 60.0, 0.0]  # Last value is grabber
-        self.target_angles   = self.servo_angles.copy()
-        self.sweep_direction = -1
+    # ------------------------------------------------------------------ sweep
+    def sweep_tick(self):
+        if not self.sweeping:
+            return
 
-        self.GRABBER_OPEN    = 0.0
-        self.GRABBER_CLOSE   = 90.0
-        self.grabbed         = False
-        self.grab_tolerance  = 1.5  # cm
+        # Update angle
+        self.base_angle += self.step_deg
 
-        # Timer: 10 Hz for smooth motion interpolation
-        self.timer = self.create_timer(0.1, self.motion_callback)
+        # Reverse at bounds 0 / 180
+        if self.base_angle >= 180.0:
+            self.base_angle = 180.0
+            self.step_deg   = -abs(self.step_deg)
+        elif self.base_angle <= 0.0:
+            self.base_angle = 0.0
+            self.step_deg   =  abs(self.step_deg)
 
-    # ---------------------------------------------------------------- motion callback
-    def motion_callback(self):
-        # Smooth interpolation
-        step_size = 4.0  # degrees per tick
-        updated = False
-        new_angles = []
+        joints = [self.base_angle, 180.0, 180.0, 60.0]   # demo shoulder/elbow/wrist
+        self.publish_and_send(joints)
+        self.get_logger().info(f"Sweeping base → {self.base_angle:.1f}°")
 
-        for i in range(len(self.servo_angles)):
-            diff = self.target_angles[i] - self.servo_angles[i]
-            if abs(diff) > step_size:
-                self.servo_angles[i] += step_size if diff > 0 else -step_size
-                updated = True
-            else:
-                self.servo_angles[i] = self.target_angles[i]  # snap to target
-            new_angles.append(self.servo_angles[i])
-
-        # Publish and send if changed
-        if updated:
-            msg = Float32MultiArray()
-            msg.data = new_angles
-            self.joint_pub.publish(msg)
-            self.send_joint_angles(new_angles)
-
-        if self.sweeping:
-            self.target_angles[0] += self.sweep_direction * step_size
-            if self.target_angles[0] >= 180.0 or self.target_angles[0] <= 0.0:
-                self.sweep_direction *= -1
-            self.target_angles[1] = 70.0
-            self.target_angles[2] = 135.0
-            self.target_angles[3] = 60.0
-            self.target_angles[4] = self.GRABBER_OPEN
-
-    # ----------------------------------------------------------------- pose callback
+    # ------------------------------------------------------------ pose callback
     def pose_callback(self, pose_msg: Pose):
         if self.sweeping:
-            self.get_logger().info('✅ Marker detected – stopping sweep')
+            self.get_logger().info("✅ Marker detected – stopping sweep")
             self.sweeping = False
 
-        # Compute inverse kinematics (dummy)
-        angles = self.compute_dummy_joint_angles(pose_msg)
+        joints = self.compute_dummy_joint_angles(pose_msg)   # returns four 0-180° angles
+        self.publish_and_send(joints)
 
-        # Distance check for grabbing
-        distance = math.sqrt(pose_msg.position.x**2 + pose_msg.position.y**2 + pose_msg.position.z**2)
-        if distance < self.grab_tolerance and not self.grabbed:
-            self.get_logger().info('🤖 Object within reach – activating grabber')
-            angles.append(self.GRABBER_CLOSE)
-            self.grabbed = True
-        else:
-            angles.append(self.GRABBER_OPEN)
+    # ---------------------------------------------------------------- helpers
+    def dummy_ik(self, pose: Pose):
+        # Very simple placeholder IK – clamp to range
+        j0 = 90.0
+        j1 = 70.0
+        j2 = 135.0
+        j3 = 60.0
+        return [max(0, min(180, a)) for a in (j0, j1, j2, j3)]
 
-        self.target_angles = angles
+    def publish_and_send(self, angles):
+        # publish for RViz / debug
+        msg = Float32MultiArray()
+        msg.data = angles
+        self.joint_pub.publish(msg)
 
-    # ---------------------------------------------------------- dummy inverse kinematics
+        # clamp & send to Arduino
+        if self.serial_port and self.serial_port.is_open:
+            clamped = [max(0.0, min(180.0, a)) for a in angles]
+            line = ','.join(f"{a:.2f}" for a in clamped) + '\n'
+            try:
+                self.serial_port.write(line.encode())
+            except serial.SerialException as e:
+                self.get_logger().warn(f"Serial write failed: {e}")
+
     def compute_dummy_joint_angles(self, pose_msg: Pose):
-        px, py, pz = pose_msg.position.x, pose_msg.position.y, pose_msg.position.z
-        self.get_logger().info(f"Position: x={px:.2f}, y={py:.2f}, z={pz:.2f}")
-        
-        pz += 12
-        L1, L2, L3 = 12, 12.5, 10
-        pz -= L3
-        x, y, z = pz, px, py  # remapped
-        r = math.sqrt(x*x + y*y)
-        if math.sqrt(x*x + y*y + z*z) > (L1 + L2):
-            self.get_logger().info("🛑 Marker too far")
-            return [180, 90, 0, -90]
+        # --------- extract & convert to consistent units ---------------
+        x_m, y_m, z_m = pose_msg.position.x, pose_msg.position.y, pose_msg.position.z
+        self.get_logger().debug(f"Tag @ ({x_m:.3f}, {y_m:.3f}, {z_m:.3f}) m")
 
-        j0 = self.servo_angles[0] - math.degrees(math.atan2(y, x))
-        j1 = math.atan2(z, math.sqrt(x*x + y*y)) + math.acos((r*r + L1*L1 - L2*L2) / (2 * L1 * r))
-        j2 = (math.acos((L1*L1 + L2*L2 - r*r) / (2 * L1 * L2)) - math.pi) * -1
-        j3 = j2 - j1
+        # Use millimetres to match L1/L2 units
+        x = (z_m + 0.012 - 0.010) * 1000.0   # original pz+12 then -L3, in mm
+        y =  y_m * 1000.0
+        z =  x_m * 1000.0                    # original swap
 
-        return [j0, math.degrees(j1), math.degrees(j2), math.degrees(j3)]
+        L1 = 120.0   # shoulder→elbow (mm)
+        L2 = 125.0   # elbow→wrist  (mm)
+        r_xy = math.hypot(x, y)
 
-    # -------------------------------------------------------------------- send to Arduino
-    def send_joint_angles(self, angles):
-        if not self.serial_port or not self.serial_port.is_open:
-            return
-        line = ','.join(f'{a:.2f}' for a in angles) + '\n'
-        try:
-            self.serial_port.write(line.encode())
-        except serial.SerialException as e:
-            self.get_logger().warn(f'Serial write failed: {e}')
+        # out-of-reach check
+        if math.hypot(r_xy, z) > (L1 + L2):
+            self.get_logger().warn("Tag out of reach")
+            return [90.0, 90.0, 90.0, 90.0]
 
-# --------------------------------------------------------------------------- main -----
+        # ------------- base yaw (deg, 0-180) ---------------------------
+        j0 = math.degrees(math.atan2(y, x))
+        if j0 < 0:
+            j0 += 360.0
+        if j0 > 180.0:
+            j0 = 360.0 - j0
+        j0 = max(0.0, min(180.0, j0))
+
+        # ------------- planar IK for j1 & j2 ---------------------------
+        wrist = math.hypot(r_xy, z)
+        phi   = math.atan2(z, r_xy)
+        acos1 = math.acos((L1**2 + wrist**2 - L2**2) / (2*L1*wrist))
+        acos2 = math.acos((L1**2 + L2**2 - wrist**2) / (2*L1*L2))
+
+        j1 = math.degrees(phi + acos1)
+        j2 = 180.0 - math.degrees(acos2)     # elbow “fold” angle
+        j3 = max(0.0, min(180.0, j2 - j1))   # simple wrist
+
+        # --------- clamp everything to [0,180] -------------------------
+        angles = [j0, j1, j2, j3]
+        angles = [max(0.0, min(180.0, a)) for a in angles]
+        return angles
+
+# ------------------------------------------------------------------- main ---
 def main(args=None):
     rclpy.init(args=args)
     node = TaskPlanner()
