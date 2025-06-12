@@ -1,3 +1,0 @@
-depthai
-opencv-python
-setuptools

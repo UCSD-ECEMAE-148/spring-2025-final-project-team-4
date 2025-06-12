@@ -1,5 +1,0 @@
-  File "/home/projects/ros2_ws/spring-2025-final-project-team-4/src/install/oakd_camera/lib/python3.8/site-packages/oakd_camera/OAKD_RAW.py", line 6
-    _from cv_bridge import CvBridge
-          ^
-SyntaxError: invalid syntax
-

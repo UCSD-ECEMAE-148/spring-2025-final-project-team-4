@@ -1,3 +1,0 @@
-[console_scripts]
-sendangles_executable = armangles.sendangles:main
-
