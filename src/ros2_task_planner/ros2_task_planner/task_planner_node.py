@@ -57,7 +57,7 @@ class TaskPlanner(Node):
         if self.sweeping:
             self.get_logger().info("✅ Marker detected – stopping sweep")
             self.sweeping = False
-            time.sleep(1)
+            time.sleep(5)
 
         joints = self.compute_dummy_joint_angles(pose_msg)   # returns four 0-180° angles
         self.publish_and_send(joints)
@@ -141,7 +141,7 @@ class TaskPlanner(Node):
         #      self.get_logger().info(f"aruco too far away")
         #      return [180, 90, 0, -90]
         #j0 = 90.0 #max(0.0, min(180.0, px * 10))   # scale & clamp
-        j0 = self.base_angle-math.degrees(math.atan(z/x))
+        j0 = self.base_angle+math.degrees(math.atan(z/x))
         #j1 = 90.0 #max(0.0, min(180.0, py * 10))
         cos_angle = (r*r + L1*L1 - L2*L2) / (2 * L1 * r)
         cos_angle = max(min(cos_angle, 1.0), -1.0)  # clamp to [-1, 1]
