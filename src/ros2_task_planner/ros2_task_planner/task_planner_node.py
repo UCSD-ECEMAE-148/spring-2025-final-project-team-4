@@ -4,6 +4,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import Pose
 from std_msgs.msg import Float32MultiArray
 import serial
+import time
 import math
 
 class TaskPlanner(Node):
@@ -47,7 +48,7 @@ class TaskPlanner(Node):
             self.base_angle = 0.0
             self.step_deg   =  abs(self.step_deg)
 
-        joints = [self.base_angle, 180.0, 180.0, 60.0]   # demo shoulder/elbow/wrist
+        joints = [self.base_angle, 90.0, 120.0, 20.0]   # demo shoulder/elbow/wrist
         self.publish_and_send(joints)
         self.get_logger().info(f"Sweeping base → {self.base_angle:.1f}°")
 
@@ -56,23 +57,25 @@ class TaskPlanner(Node):
         if self.sweeping:
             self.get_logger().info("✅ Marker detected – stopping sweep")
             self.sweeping = False
+            time.sleep(1)
 
         joints = self.compute_dummy_joint_angles(pose_msg)   # returns four 0-180° angles
         self.publish_and_send(joints)
 
     # ---------------------------------------------------------------- helpers
-    def dummy_ik(self, pose: Pose):
-        # Very simple placeholder IK – clamp to range
-        j0 = 90.0
-        j1 = 70.0
-        j2 = 135.0
-        j3 = 60.0
-        return [max(0, min(180, a)) for a in (j0, j1, j2, j3)]
+    # def dummy_ik(self, pose: Pose):
+    #     # Very simple placeholder IK – clamp to range
+    #     j0 = 90.0
+    #     j1 = 70.0
+    #     j2 = 135.0
+    #     j3 = 60.0
+    #     return [max(0, min(180, a)) for a in (j0, j1, j2, j3)]
 
     def publish_and_send(self, angles):
+        floats = [float(a) for a in angles]
         # publish for RViz / debug
         msg = Float32MultiArray()
-        msg.data = angles
+        msg.data = floats
         self.joint_pub.publish(msg)
 
         # clamp & send to Arduino
@@ -84,45 +87,75 @@ class TaskPlanner(Node):
             except serial.SerialException as e:
                 self.get_logger().warn(f"Serial write failed: {e}")
 
+    # def compute_dummy_joint_angles(self, pose_msg: Pose):
+    #     # --------- extract & convert to consistent units ---------------
+    #     x_m, y_m, z_m = pose_msg.position.x, pose_msg.position.y, pose_msg.position.z
+    #     self.get_logger().debug(f"Tag @ ({x_m:.3f}, {y_m:.3f}, {z_m:.3f}) m")
+
+    #     # Use millimetres to match L1/L2 units
+    #     x = (z_m + 0.012 - 0.010) * 1000.0   # original pz+12 then -L3, in mm
+    #     y =  y_m * 1000.0
+    #     z =  -z_m * 1000.0                    # original swap
+
+    #     L1 = 120.0   # shoulder→elbow (mm)
+    #     L2 = 125.0   # elbow→wrist  (mm)
+    #     r_xy = math.hypot(x, y)
+
+    #     # out-of-reach check
+    #     if math.hypot(r_xy, z) > (L1 + L2):
+    #         self.get_logger().warn("Tag out of reach")
+    #         return [90.0, 90.0, 90.0, 90.0]
+
+    #     # ------------- base yaw (deg, 0-180) ---------------------------
+    #     j0 = math.degrees(math.atan2(y, x))
+    #     if j0 < 0:
+    #         j0 += 360.0
+    #     if j0 > 180.0:
+    #         j0 = 360.0 - j0
+    #     j0 = max(0.0, min(180.0, j0))
+
+    #     # ------------- planar IK for j1 & j2 ---------------------------
+    #     wrist = math.hypot(r_xy, z)
+    #     phi   = math.atan2(z, r_xy)
+    #     acos1 = math.acos((L1**2 + wrist**2 - L2**2) / (2*L1*wrist))
+    #     acos2 = math.acos((L1**2 + L2**2 - wrist**2) / (2*L1*L2))
+
+    #     j1 = math.degrees(phi + acos1)
+    #     j2 = 180.0 - math.degrees(acos2)     # elbow “fold” angle
+    #     j3 = max(0.0, min(180.0, j2 - j1))   # simple wrist
+
     def compute_dummy_joint_angles(self, pose_msg: Pose):
-        # --------- extract & convert to consistent units ---------------
-        x_m, y_m, z_m = pose_msg.position.x, pose_msg.position.y, pose_msg.position.z
-        self.get_logger().debug(f"Tag @ ({x_m:.3f}, {y_m:.3f}, {z_m:.3f}) m")
+        # simple proportional mapping just for demonstration
+        px, py, pz = pose_msg.position.x, pose_msg.position.y, pose_msg.position.z
+        self.get_logger().info(f"Position: x={pose_msg.position.x:.2f}, y={pose_msg.position.y:.2f}, z={pose_msg.position.z:.2f}")
+        # pz=pz+23
+        L1=12
+        L2=12.5
+        L3=5
+        x=23+py
+        z=px
+        y=0-pz+L3 -1
+        r=math.sqrt(x*x+y*y)
+        self.get_logger().info(f"arm position: x={x:.2f}, y={y:.2f}, z={z:.2f},  r={r:.2f}")
+        # if (r<(L1+L2)):
+        #      self.get_logger().info(f"aruco too far away")
+        #      return [180, 90, 0, -90]
+        #j0 = 90.0 #max(0.0, min(180.0, px * 10))   # scale & clamp
+        j0 = self.base_angle-math.degrees(math.atan(z/x))
+        #j1 = 90.0 #max(0.0, min(180.0, py * 10))
+        cos_angle = (r*r + L1*L1 - L2*L2) / (2 * L1 * r)
+        cos_angle = max(min(cos_angle, 1.0), -1.0)  # clamp to [-1, 1]
+        j1 = math.atan2(y, x) + math.acos(cos_angle)
 
-        # Use millimetres to match L1/L2 units
-        x = (z_m + 0.012 - 0.010) * 1000.0   # original pz+12 then -L3, in mm
-        y =  y_m * 1000.0
-        z =  x_m * 1000.0                    # original swap
+        #j2 = 0.0 #max(0.0, min(180.0, pz * 10))
+        cos_angle2 = (L1*L1 + L2*L2 - r*r) / (2 * L1 * L2)
+        cos_angle2 = max(min(cos_angle2, 1.0), -1.0)
+        j2 = (math.acos(cos_angle2) - math.pi)
 
-        L1 = 120.0   # shoulder→elbow (mm)
-        L2 = 125.0   # elbow→wrist  (mm)
-        r_xy = math.hypot(x, y)
+        #j3 = 0.0 # 90.0                            # fixed wrist for now
+        j3 = -(j1 + j2)  # keep end-effector horizontal
+        angles=[j0, math.degrees(j1)+30, math.degrees(j2)+ 55,math.degrees(j3)]
 
-        # out-of-reach check
-        if math.hypot(r_xy, z) > (L1 + L2):
-            self.get_logger().warn("Tag out of reach")
-            return [90.0, 90.0, 90.0, 90.0]
-
-        # ------------- base yaw (deg, 0-180) ---------------------------
-        j0 = math.degrees(math.atan2(y, x))
-        if j0 < 0:
-            j0 += 360.0
-        if j0 > 180.0:
-            j0 = 360.0 - j0
-        j0 = max(0.0, min(180.0, j0))
-
-        # ------------- planar IK for j1 & j2 ---------------------------
-        wrist = math.hypot(r_xy, z)
-        phi   = math.atan2(z, r_xy)
-        acos1 = math.acos((L1**2 + wrist**2 - L2**2) / (2*L1*wrist))
-        acos2 = math.acos((L1**2 + L2**2 - wrist**2) / (2*L1*L2))
-
-        j1 = math.degrees(phi + acos1)
-        j2 = 180.0 - math.degrees(acos2)     # elbow “fold” angle
-        j3 = max(0.0, min(180.0, j2 - j1))   # simple wrist
-
-        # --------- clamp everything to [0,180] -------------------------
-        angles = [j0, j1, j2, j3]
         angles = [max(0.0, min(180.0, a)) for a in angles]
         return angles
 

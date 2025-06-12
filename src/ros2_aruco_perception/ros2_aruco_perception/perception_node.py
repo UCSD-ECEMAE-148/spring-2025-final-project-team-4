@@ -21,7 +21,7 @@ class ArUcoPoseEstimator(Node):
             self.listener_callback,
             10)
         self.publisher = self.create_publisher(Image, 'pose_estimation/image', 10)
-        self.MARKER_SIZE = 12.14  # centimeters
+        self.MARKER_SIZE = 4.445  # centimeters
         self.pixels_per_cm = 170 / 20.3  # approx 8.37 pixels per cm
         self.marker_dict = aruco.getPredefinedDictionary(aruco.DICT_APRILTAG_36h11)
         self.param_markers = aruco.DetectorParameters()
