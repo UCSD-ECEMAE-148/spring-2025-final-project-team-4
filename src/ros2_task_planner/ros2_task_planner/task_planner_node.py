@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Pose
 from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import Float32
 import serial
 import time
 import math
@@ -24,6 +25,8 @@ class TaskPlanner(Node):
                                                '/arm/joint_commands', 10)
         self.create_subscription(Pose, 'aruco_marker/pose',
                                  self.pose_callback, 10)
+        self.create_subscription(Float32, '/At_Block',
+                                 self.sweep_tick, 10)
 
         # ---- Sweep parameters ----------------------------------------------
         self.sweeping      = True      # start in sweep mode
@@ -33,7 +36,10 @@ class TaskPlanner(Node):
         self.create_timer(self.timer_period, self.sweep_tick)
 
     # ------------------------------------------------------------------ sweep
-    def sweep_tick(self):
+    def sweep_tick(self, msg:Float32):
+        if Float32_msg.data != 2.0:
+            return
+
         if not self.sweeping:
             return
 
