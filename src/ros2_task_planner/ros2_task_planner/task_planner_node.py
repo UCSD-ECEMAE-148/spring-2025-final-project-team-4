@@ -48,28 +48,40 @@ class TaskPlanner(Node):
             self.base_angle = 0.0
             self.step_deg   =  abs(self.step_deg)
 
-        joints = [self.base_angle, 90.0, 120.0, 20.0]   # demo shoulder/elbow/wrist
+        joints = [self.base_angle, 90.0, 120.0, 20.0, 0.0]   # demo shoulder/elbow/wrist
         self.publish_and_send(joints)
         self.get_logger().info(f"Sweeping base → {self.base_angle:.1f}°")
 
     # ------------------------------------------------------------ pose callback
     def pose_callback(self, pose_msg: Pose):
+        CLAW_OPEN   = 0.0
+        CLAW_CLOSED = 180.0
+        HOME_POSE   = [90, 120, 55, 90, CLAW_CLOSED]  # 5 values
+
+        # -------- stop sweep on first detection -------------
         if self.sweeping:
             self.get_logger().info("✅ Marker detected – stopping sweep")
             self.sweeping = False
-            time.sleep(5)
+            time.sleep(1)            # short pause, not 5 s
 
-        joints = self.compute_dummy_joint_angles(pose_msg)   # returns four 0-180° angles
+        # -------- move to tag with claw open ----------------
+        joints = self.compute_dummy_joint_angles(pose_msg)  # returns 4 angles
+        joints += [CLAW_OPEN]        # now length = 5
         self.publish_and_send(joints)
+        time.sleep(1.5)
 
-    # ---------------------------------------------------------------- helpers
-    # def dummy_ik(self, pose: Pose):
-    #     # Very simple placeholder IK – clamp to range
-    #     j0 = 90.0
-    #     j1 = 70.0
-    #     j2 = 135.0
-    #     j3 = 60.0
-    #     return [max(0, min(180, a)) for a in (j0, j1, j2, j3)]
+        # -------- close claw --------------------------------
+        joints[4] = CLAW_CLOSED      # REPLACE value instead of append
+        self.publish_and_send(joints)
+        time.sleep(1)
+
+        # -------- retract to home ---------------------------
+        self.publish_and_send(HOME_POSE)
+        time.sleep(1000)
+
+        # optionally restart sweeping
+        # self.sweeping = True
+
 
     def publish_and_send(self, angles):
         floats = [float(a) for a in angles]
@@ -132,9 +144,9 @@ class TaskPlanner(Node):
         L1=12
         L2=12.5
         L3=5
-        x=23+py
+        x=23+py + 2.5
         z=px
-        y=0-pz+L3 -1
+        y=0-pz+L3 +1
         r=math.sqrt(x*x+y*y)
         self.get_logger().info(f"arm position: x={x:.2f}, y={y:.2f}, z={z:.2f},  r={r:.2f}")
         # if (r<(L1+L2)):
@@ -154,7 +166,7 @@ class TaskPlanner(Node):
 
         #j3 = 0.0 # 90.0                            # fixed wrist for now
         j3 = -(j1 + j2)  # keep end-effector horizontal
-        angles=[j0, math.degrees(j1)+30, math.degrees(j2)+ 55,math.degrees(j3)]
+        angles=[j0 - 10, math.degrees(j1)+60, math.degrees(j2)+ 65,math.degrees(j3)] ## Change later j0
 
         angles = [max(0.0, min(180.0, a)) for a in angles]
         return angles
