@@ -1,111 +1,98 @@
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
-#include <math.h>
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
-String incomingByte = ""; 
-float I = 0;
 
-// PWM bounds for continuous rotation or range servos
-const int STOP = 375;
-const int FORWARD = 650;
-const int REVERSE = 175;
-const int ROTATE_360_TIME = 1200;
-
-// Servo channel assignments
-const int servoChannel0 = 0;
-const int home0 = 650;
-
-const int servoChannel1 = 1;
-const int home1 = 485;
-
-const int servoChannel2 = 2;
-const int home2 = 285;
-
-const int servoChannel3 = 3;
-const int home3 = 378;
-
-const int servoChannel4 = 4; // New grabber servo
-const int home4 = 300;       // Adjust based on calibration
-
-// Angle variables
+// Current angles
+float cur0 = 90, cur1 = 120, cur2 = 55, cur3 = 90, cur4 = 90;
 float theta0, theta1, theta2, theta3, theta4;
-float cur0 = 90, cur1 = 90, cur2 = 0, cur3 = 0, cur4 = 0;
+
+// Servo channels
+const int servoChannel0 = 0; // Base
+const int servoChannel1 = 1; // Shoulder
+const int servoChannel2 = 2; // Elbow
+const int servoChannel3 = 3; // Wrist
+const int servoChannel4 = 4; // Claw
+
+// PWM limits
+const int MIN_PWM = 150;
+const int MAX_PWM = 650;
 
 void setup() {
   Serial.begin(9600);
   pwm.begin();
   pwm.setPWMFreq(50);
 
-  pwm.setPWM(servoChannel0, 0, home0);
-  pwm.setPWM(servoChannel1, 0, home1);
-  pwm.setPWM(servoChannel2, 0, home2);
-  pwm.setPWM(servoChannel3, 0, home3);
-  pwm.setPWM(servoChannel4, 0, home4); // Initialize grabber
+  // Initialize all servos to default position
+  moveAllTo(90, 120, 55, 90, 90);
+}
+
+// Maps angle (0–180°) to PWM (150–650)
+int angleToPWM(float angle) {
+  return int((angle / 180.0) * (MAX_PWM - MIN_PWM) + MIN_PWM);
+}
+
+void moveAllTo(float a0, float a1, float a2, float a3, float a4) {
+  pwm.setPWM(servoChannel0, 0, angleToPWM(a0));
+  pwm.setPWM(servoChannel1, 0, angleToPWM(a1));
+  pwm.setPWM(servoChannel2, 0, angleToPWM(a2));
+  pwm.setPWM(servoChannel3, 0, angleToPWM(a3));
+  pwm.setPWM(servoChannel4, 0, angleToPWM(a4));
+}
+
+void smoothMove(float t0, float t1, float t2, float t3, float t4) {
+  const int steps = 30;
+  for (int i = 1; i <= steps; i++) {
+    moveAllTo(
+      cur0 + (t0 - cur0) * i / steps,
+      cur1 + (t1 - cur1) * i / steps,
+      cur2 + (t2 - cur2) * i / steps,
+      cur3 + (t3 - cur3) * i / steps,
+      cur4 + (t4 - cur4) * i / steps
+    );
+    delay(33);
+  }
+
+  cur0 = t0;
+  cur1 = t1;
+  cur2 = t2;
+  cur3 = t3;
+  cur4 = t4;
+}
+
+bool parseSerialAngles() {
+  String s = Serial.readStringUntil('\n');
+
+  int c1 = s.indexOf(',');
+  int c2 = s.indexOf(',', c1 + 1);
+  int c3 = s.indexOf(',', c2 + 1);
+  int c4 = s.indexOf(',', c3 + 1);
+
+  if (c1 == -1 || c2 == -1 || c3 == -1 || c4 == -1) {
+    Serial.println("❌ Error: Bad input format.");
+    return false;
+  }
+
+  theta0 = s.substring(0, c1).toFloat();
+  theta1 = s.substring(c1 + 1, c2).toFloat();
+  theta2 = s.substring(c2 + 1, c3).toFloat();
+  theta3 = s.substring(c3 + 1, c4).toFloat();
+  theta4 = s.substring(c4 + 1).toFloat();
+
+  Serial.print("✅ Parsed: ");
+  Serial.print(theta0); Serial.print(", ");
+  Serial.print(theta1); Serial.print(", ");
+  Serial.print(theta2); Serial.print(", ");
+  Serial.print(theta3); Serial.print(", ");
+  Serial.println(theta4);
+
+  return true;
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    readsplit();  // Parses incoming serial string into theta0–4
-
-    for (int i = 1; i <= 30; i++) {
-      // You can uncomment these if you want other servos to move too
-      // SetPosch0(cur0 + (theta0 - cur0) * i / 30);
-      SetPosch1(cur1 + (theta1 - cur1) * i / 30);
-      // SetPosch2(cur2 + (theta2 - cur2) * i / 30);
-      // SetPosch3(cur3 + (theta3 - cur3) * i / 30);
-      SetPosch4(cur4 + (theta4 - cur4) * i / 30); // Move grabber
-
-      delay(33);
+    if (parseSerialAngles()) {
+      smoothMove(theta0, theta1, theta2, theta3, theta4);
     }
-
-    cur0 = theta0;
-    cur1 = theta1;
-    cur2 = theta2;
-    cur3 = theta3;
-    cur4 = theta4;
   }
-}
-
-int SetPosch0(float angle) {
-  float temp = (angle / 90) * 237.5 + 412.5;
-  pwm.setPWM(servoChannel0, 0, temp);
-}
-
-int SetPosch1(float angle) {
-  float temp = home1 - 225 + angle * 450 / 180;
-  pwm.setPWM(servoChannel1, 0, temp);
-}
-
-int SetPosch2(float angle) {
-  float temp = home2 + angle * 500 / 180;
-  pwm.setPWM(servoChannel2, 0, temp);
-}
-
-int SetPosch3(float angle) {
-  float temp = home3 + angle * 575 / 180;
-  pwm.setPWM(servoChannel3, 0, temp);
-}
-
-int SetPosch4(float angle) {
-  float temp = home4 + angle * 200 / 90; // 0=open, 90=closed
-  pwm.setPWM(servoChannel4, 0, temp);
-}
-
-int readsplit() {
-  String fullstring = Serial.readStringUntil('\n');
-
-  int comma1 = fullstring.indexOf(',');
-  int comma2 = fullstring.indexOf(',', comma1 + 1);
-  int comma3 = fullstring.indexOf(',', comma2 + 1);
-  int comma4 = fullstring.indexOf(',', comma3 + 1);
-
-  theta0 = fullstring.substring(0, comma1).toFloat();
-  theta1 = fullstring.substring(comma1 + 1, comma2).toFloat();
-  theta2 = fullstring.substring(comma2 + 1, comma3).toFloat();
-  theta3 = fullstring.substring(comma3 + 1, comma4).toFloat();
-  theta4 = fullstring.substring(comma4 + 1).toFloat();
-
-  Serial.print("Grabber angle: ");
-  Serial.println(theta4); // Debug
 }
