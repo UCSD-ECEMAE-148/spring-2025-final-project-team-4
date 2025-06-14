@@ -11,10 +11,6 @@
 <h3>ECE/MAE148 Final Project</h3>
 <p>
 Team 4 Spring 2025
-</p>
-  
-  ![Hardware Screenshot](https://github.com/user-attachments/assets/01e80524-9195-473b9471-04279aa8babe)
-</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -134,7 +130,7 @@ Thank you to Professor Jack Silberman and our TAs Winston and Alexander for guid
 
 * Alex Corrow \| acorrow@ucsd.edu  
 * Mathew Pope \| mpope@ucsd.edu  
-* Andy Cao \| aica000@ucsd.edu  
+* Andy Cao \| s8cao@ucsd.edu  
 * Nakul Nandhakumar \| nnandhakumar@ucsd.edu
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
