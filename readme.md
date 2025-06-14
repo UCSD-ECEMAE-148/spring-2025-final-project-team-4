@@ -60,7 +60,7 @@ ros2 launch ros2_aruco_perception perception_and_planner.launch.py
 **Final Presentation (Slides & Video of Hardware):**  
 https://docs.google.com/presentation/d/1APFi1BjdTKXVH6-0_UxK7G_MsOrpkmDJQneW7MeSyVo/edit?slide=id.g365cdf15545_0_0
 
-<img width="344" alt="Screen Shot 2025-06-13 at 10 55 59 AM" src="https://github.com/user-attachments/assets/01e80524-9195-473b9471-04279aa8babe" />
+<img width="344" alt="Screen Shot 2025-06-13 at 10 55 59 AM" src="https://github.com/user-attachments/assets/01e80524-9195-473b-9471-04279aa8babe" />
 
 ## Team Members
 
