@@ -72,8 +72,8 @@ https://docs.google.com/presentation/d/1APFi1BjdTKXVH6-0_UxK7G_MsOrpkmDJQneW7MeS
 <ul>
   <li>Alex Corrow - Mechanical and Aerospace Engineering (MAE) - Class of 2025</li>
   <li>Mathew Pope - Mechanical and Aerospace Engineering (MAE) - Class of 2025</li>
-  <li>Andy Cao - Mathematics &amp; Computer Science - Class of 2025</li>
-  <li>Nakul Nandhakumar - Mathematics &amp; Computer Science - Class of 2025</li>
+  <li>Andy Cao - Mathematics &amp; Computer Science - Class of 2027</li>
+  <li>Nakul Nandhakumar - Electrical &amp; Computer Engineering (ECE) - Class of 2025</li>
 </ul>
 
 ## Final Project
